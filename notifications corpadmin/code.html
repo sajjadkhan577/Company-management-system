@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#79849a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-container": "#131b2e",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000000",
+                        "inverse-surface": "#2d3133",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-container": "#7c839b",
+                        "on-primary": "#ffffff",
+                        "outline": "#76777d",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed": "#131b2e",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#111c2d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#00714d",
+                        "on-tertiary-fixed": "#111c2d",
+                        "tertiary-fixed": "#d8e3fb",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eff1f3",
+                        "background": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary": "#000000",
+                        "surface": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-container": "#6cf8bb",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#005236",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-tablet": "24px",
+                        "sidebar-width": "280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "container-max-width": "1440px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container dark:bg-surface-container-lowest text-secondary-fixed dark:text-secondary border-r border-outline-variant dark:border-outline shadow-sm flex flex-col py-stack-lg z-50">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary dark:text-primary">CorpAdmin</h1>
+<p class="text-on-primary-container font-label-sm text-label-sm opacity-70">Enterprise Suite</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-label-md text-label-md">Employees</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Payroll</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container border-l-4 border-secondary-fixed font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<button class="w-full bg-secondary text-on-secondary py-3 rounded-lg font-label-md text-label-md mb-6 hover:opacity-90 transition-all scale-95 active:scale-90">
+                New Report
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/50 shadow-sm flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center gap-stack-lg">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-80 font-body-sm text-body-sm focus:ring-2 focus:ring-secondary transition-all" placeholder="Search notifications..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="material-symbols-outlined hover:text-primary transition-all">notifications</button>
+<button class="material-symbols-outlined hover:text-primary transition-all">chat_bubble</button>
+<button class="material-symbols-outlined hover:text-primary transition-all">settings</button>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="User Profile Avatar" data-alt="A professional headshot of a corporate executive in a sharp business suit, set against a clean, softly blurred modern office interior with warm ambient lighting and emerald green accents. The aesthetic is professional, high-end, and perfectly aligned with a light-mode enterprise software interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpLodWgywzZvlJ2ngOIlkILT09khYdsfy0uGDLLtxw3G9ebWVO5mD5t5bklDOFUavMADuEy8giKE-uV8iDlfN2-Aslp-MI07OaI26-bLANVaJRDXElYfeeutQVK2LnapLWqqDseg_gvKyB1-0kH55j88CwtYN42p8CovdNNYxxzyvidtA7MWZGmW7xj_o_R1200UAeV5ahg_TLkAKDsluZcgivrMN3GcEeCTmzOhJgv-RS0fUb1QwHVDYHR-kueo56KdsXNgzDcgOe"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<section class="p-margin-desktop flex-1 max-w-container-max-width mx-auto w-full">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Notification Center</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Manage your alerts, approvals, and system updates.</p>
+</div>
+<div class="flex gap-stack-md">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-md font-label-md text-label-md hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+                        Mark all as read
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-md font-label-md text-label-md hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filter by category
+                    </button>
+</div>
+</div>
+<!-- Bento Grid of Notifications -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Filters & Stats (Asymmetric Sidebar in Content) -->
+<div class="col-span-12 lg:col-span-3 space-y-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h3 class="font-label-md text-label-md mb-stack-md text-primary">Categories</h3>
+<nav class="space-y-1">
+<button class="w-full flex justify-between items-center px-3 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md">
+<span>All Notifications</span>
+<span class="bg-secondary text-on-secondary px-2 py-0.5 rounded-full text-[10px]">24</span>
+</button>
+<button class="w-full flex justify-between items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-label-md text-label-md transition-all">
+<span>Leave Approvals</span>
+<span class="text-on-surface-variant opacity-60 text-[10px]">12</span>
+</button>
+<button class="w-full flex justify-between items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-label-md text-label-md transition-all">
+<span>Task Reminders</span>
+<span class="text-on-surface-variant opacity-60 text-[10px]">5</span>
+</button>
+<button class="w-full flex justify-between items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-label-md text-label-md transition-all">
+<span>Project Updates</span>
+<span class="text-on-surface-variant opacity-60 text-[10px]">4</span>
+</button>
+<button class="w-full flex justify-between items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-label-md text-label-md transition-all">
+<span>System Alerts</span>
+<span class="text-on-surface-variant opacity-60 text-[10px]">3</span>
+</button>
+</nav>
+</div>
+<div class="bg-primary-container text-on-primary-container rounded-xl p-stack-lg shadow-sm overflow-hidden relative">
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm opacity-80 uppercase tracking-wider">Priority Task</p>
+<h4 class="font-headline-sm text-headline-sm mt-1">Review Q4 Payroll</h4>
+<p class="font-body-sm text-body-sm mt-2 opacity-70">Due in 4 hours. Ensure all adjustments are finalized before the batch processing starts.</p>
+<button class="mt-4 bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-md font-label-md text-label-md">Review Now</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+</div>
+</div>
+</div>
+<!-- Notification Feed -->
+<div class="col-span-12 lg:col-span-9 space-y-4">
+<!-- Today Section -->
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Today</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<!-- Notification Item: Leave Approval (Success) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm hover:shadow-md transition-all group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex gap-5">
+<div class="h-12 w-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-label-md text-label-md text-primary">Leave Request Approved</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">10m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">Your vacation request for <span class="font-bold">Dec 20 - Jan 02</span> has been approved by HR Management.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant rounded font-label-sm text-[10px]">Leave Approvals</span>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 material-symbols-outlined text-on-surface-variant transition-all">more_vert</button>
+</div>
+</div>
+<!-- Notification Item: Task Reminder (Warning) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm hover:shadow-md transition-all group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-500"></div>
+<div class="flex gap-5">
+<div class="h-12 w-12 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-amber-600" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-label-md text-label-md text-primary">Pending Task Reminder</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">2h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">The <span class="font-bold">Project Alpha Monthly Report</span> is due in 24 hours. Please ensure all data sets are synced.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant rounded font-label-sm text-[10px]">Task Reminders</span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline">View Task</button>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 material-symbols-outlined text-on-surface-variant transition-all">more_vert</button>
+</div>
+</div>
+<!-- Notification Item: System Alert (Critical) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm hover:shadow-md transition-all group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex gap-5">
+<div class="h-12 w-12 rounded-full bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-error-container" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-label-md text-label-md text-primary">Unusual Login Activity</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">5h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">We detected a login from a new device in <span class="font-bold">Singapore</span>. If this wasn't you, please secure your account immediately.</p>
+<div class="mt-3 flex gap-3">
+<button class="bg-error text-on-error px-3 py-1 rounded-md font-label-sm text-label-sm">Secure Account</button>
+<button class="text-on-surface-variant font-label-sm text-label-sm hover:underline">It was me</button>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 material-symbols-outlined text-on-surface-variant transition-all">more_vert</button>
+</div>
+</div>
+<!-- Yesterday Section -->
+<div class="flex items-center gap-4 mt-8 mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Yesterday</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<!-- Notification Item: Project Update (Info) -->
+<div class="bg-surface-container-low opacity-80 border border-outline-variant/50 rounded-xl p-5 transition-all group">
+<div class="flex gap-5">
+<div class="h-12 w-12 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-label-md text-label-md text-primary">New Project Assigned</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">Yesterday, 4:15 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">You have been added to the <span class="font-bold">Global Expansion Phase 2</span> team as a Senior Stakeholder.</p>
+<div class="mt-3">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant rounded font-label-sm text-[10px]">Project Updates</span>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-50">more_vert</button>
+</div>
+</div>
+<!-- Notification Item: Data Sync (System) -->
+<div class="bg-surface-container-low opacity-80 border border-outline-variant/50 rounded-xl p-5 transition-all group">
+<div class="flex gap-5">
+<div class="h-12 w-12 rounded-full bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-label-md text-label-md text-primary">System Maintenance Complete</h5>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">Yesterday, 9:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">Scheduled database maintenance for the payroll module has finished successfully. Performance improvements are now live.</p>
+<div class="mt-3">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant rounded font-label-sm text-[10px]">System Alerts</span>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant opacity-50">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="p-margin-desktop text-center border-t border-outline-variant/20 mt-auto">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-40">© 2023 CorpAdmin Enterprise Suite. All rights reserved.</p>
+</footer>
+</main>
+</body></html>

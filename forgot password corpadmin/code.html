@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed": "#dae2fd",
+                    "outline": "#76777d",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-fixed": "#002113",
+                    "primary-fixed-dim": "#bec6e0",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#131b2e",
+                    "inverse-surface": "#2d3133",
+                    "inverse-primary": "#bec6e0",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "outline-variant": "#c6c6cd",
+                    "secondary": "#006c49",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "on-primary-container": "#7c839b",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#131b2e",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "on-tertiary-fixed": "#111c2d",
+                    "tertiary-fixed": "#d8e3fb",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-container": "#79849a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "surface-container-high": "#e6e8ea",
+                    "primary": "#000000",
+                    "secondary-container": "#6cf8bb",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary": "#000000",
+                    "tertiary-container": "#111c2d",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#45464d",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "sidebar-width": "280px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "container-max-width": "1440px",
+                    "stack-lg": "24px",
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "margin-tablet": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop">
+<div class="w-full max-w-[440px] flex flex-col gap-stack-lg">
+<div class="flex flex-col items-center text-center gap-stack-sm mb-stack-md">
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center mb-stack-sm shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed-dim !text-[32px]" data-icon="lock_reset">lock_reset</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary">CorpAdmin</h1>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Enterprise Suite</p>
+</div>
+<main class="glass-panel rounded-xl p-stack-lg flex flex-col gap-stack-lg">
+<div class="flex flex-col gap-stack-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Forgot Password?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Enter your registered work email address below. We will send a secure password reset link to your inbox.
+                </p>
+</div>
+<form class="flex flex-col gap-stack-md" onsubmit="return false;">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant ml-1" for="email">WORK EMAIL</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 bg-[#F1F5F9] border-transparent rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-secondary focus:border-transparent focus:bg-white transition-all duration-200" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<button class="w-full bg-[#10B981] hover:bg-[#059669] text-white py-3 px-6 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-95" type="submit">
+                    Send Reset Link
+                    <span class="material-symbols-outlined !text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="flex flex-col gap-stack-sm items-center pt-2">
+<a class="font-label-md text-label-md text-secondary hover:text-on-secondary-container transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined !text-[18px]" data-icon="arrow_back">arrow_back</span>
+                    Back to Login
+                </a>
+</div>
+</main>
+<section class="grid grid-cols-1 gap-stack-sm mt-stack-md">
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-outline-variant/30 flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="info">info</span>
+<div class="flex flex-col gap-1">
+<p class="font-label-sm text-label-sm text-on-surface">Security Protocol</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reset links are valid for 15 minutes. For security, we never send passwords via email.</p>
+</div>
+</div>
+</section>
+<footer class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant/60">
+                © 2024 CorpAdmin Enterprise. All rights reserved.
+            </p>
+</footer>
+</div>
+<div class="fixed inset-0 -z-10 overflow-hidden opacity-40 pointer-events-none">
+<div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-secondary-container/20 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary-fixed/20 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Profile - Alex Rivera</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#bec6e0",
+                    "surface": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "tertiary-fixed": "#d8e3fb",
+                    "primary-fixed": "#dae2fd",
+                    "on-surface-variant": "#45464d",
+                    "tertiary-container": "#111c2d",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#131b2e",
+                    "on-primary-fixed": "#131b2e",
+                    "background": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-container": "#79849a",
+                    "primary-fixed-dim": "#bec6e0",
+                    "primary": "#000000",
+                    "surface-tint": "#565e74",
+                    "inverse-surface": "#2d3133",
+                    "outline": "#76777d",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "secondary": "#006c49",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-background": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "on-tertiary-fixed": "#111c2d",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#6ffbbe",
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary-container": "#00714d",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#000000",
+                    "outline-variant": "#c6c6cd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-tablet": "24px",
+                    "stack-md": "16px",
+                    "sidebar-width": "280px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "32px",
+                    "container-max-width": "1440px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+        }
+        .sidebar-active-indicator {
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #10B981;
+        }
+        body {
+            background-color: #F8FAFC;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary-container flex flex-col py-stack-lg border-r border-outline-variant z-50">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">CorpAdmin</h1>
+<p class="text-on-primary-container text-label-sm opacity-80">Enterprise Suite</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="relative flex items-center px-6 py-3 bg-secondary-container text-on-secondary-container border-l-4 border-secondary-fixed font-bold" href="#">
+<span class="material-symbols-outlined mr-3">badge</span>
+<span class="font-label-md text-label-md">Employees</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">account_tree</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">calendar_today</span>
+<span class="font-label-md text-label-md">Attendance</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="font-label-md text-label-md">Payroll</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/20">
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="flex items-center px-6 py-3 text-on-primary-container hover:bg-primary/10 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="ml-sidebar-width min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 w-full h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/50 flex justify-between items-center px-margin-desktop">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-secondary text-body-sm" placeholder="Search employee, projects..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/50 mx-2"></div>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a corporate executive with a friendly expression, set against a blurred office background with neutral gray and blue tones, conveying a sense of leadership and approachable professionalism in high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIDOYizQVbkwFpf9DKzh-MI8mQu0ZRdXxutA2vZuDIy_AsUFgVRo9VQ7wN01dETG9g3YVCH-sVci3UURZ8oOSjnUf17eWtFEQ22c24lLmipK4nGWHw3LSfQDvnodWI4M1NslVI285XUfid62dRwijxMQ3C-bBxELbm4FXQMAQm7qR5wfsfz_4wInfzNO8pQK0i7MeuKfFcFVtBFVqCNi9ZVGQiPEMYjf6M1yR8oqUidBMsP8iYTd9SMbM1jj4GJvEP6BKxxbn0e1zO"/>
+</div>
+</header>
+<!-- Profile Page Content -->
+<main class="flex-1 p-margin-desktop space-y-gutter max-w-container-max-width mx-auto w-full">
+<!-- Breadcrumbs & Actions -->
+<div class="flex justify-between items-end">
+<div>
+<nav class="flex text-label-sm text-on-surface-variant mb-2">
+<span class="hover:text-primary cursor-pointer">Employees</span>
+<span class="mx-2">/</span>
+<span class="text-primary font-bold">Alex Rivera</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg">Employee Profile</h2>
+</div>
+<div class="flex gap-stack-md">
+<button class="flex items-center px-4 py-2 border border-primary text-primary rounded-md font-label-md hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined mr-2 text-[20px]">download</span>
+                        Export Data
+                    </button>
+<button class="flex items-center px-6 py-2 bg-[#10B981] text-white rounded-md font-label-md shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined mr-2 text-[20px]">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+</div>
+<!-- Header Profile Section -->
+<section class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center gap-8">
+<div class="relative">
+<img alt="Alex Rivera Profile Photo" class="w-32 h-32 rounded-full object-cover border-4 border-surface shadow-md" data-alt="A high-quality portrait of a male professional named Alex Rivera, featuring a sharp suit and a confident, subtle smile. The lighting is crisp and modern, with soft shadows that emphasize character. The overall aesthetic is clean and institutional, perfectly matching a high-end enterprise management dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAON3yzA5EQPfylcClsjpKiCAU5jiAslAkBP0vKlUjdbRbLjon8H00dz3np8H5kAhbkTX0uRjIk4IhXqiKYwK7JrmbyYHFwT8b8O_gsSDImvPclZpfdOqzmv8Y8yhGQrBICHH98mpJk8Co2KNfLQvNaihDDd76hvwoLW31tXweFAz2Ac3DIE6tecX7PQ5ogYoHHVaojm7B7KYo2gZvBXG7VRzW7aH-5b29P3ej_tD585TXRRk_9IumpwecJ1WL5yMSk37mBBgfcgROk"/>
+<div class="absolute bottom-1 right-1 w-6 h-6 bg-[#10B981] border-4 border-white rounded-full" title="Active"></div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-center gap-3 mb-2">
+<h3 class="font-headline-md text-headline-md">Alex Rivera</h3>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-bold">
+                            Active
+                        </span>
+</div>
+<p class="text-body-lg text-on-surface-variant mb-4">Senior Software Engineer &amp; Team Lead</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="flex items-center text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined mr-2 text-[20px]">location_on</span>
+                            San Francisco, CA
+                        </div>
+<div class="flex items-center text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined mr-2 text-[20px]">business</span>
+                            Engineering Department
+                        </div>
+<div class="flex items-center text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined mr-2 text-[20px]">mail</span>
+                            alex.rivera@corpadmin.io
+                        </div>
+</div>
+</div>
+<div class="hidden lg:grid grid-cols-2 gap-4 border-l border-outline-variant pl-8">
+<div class="text-center">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Attendance</p>
+<p class="font-headline-sm text-headline-sm text-secondary">98%</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Projects</p>
+<p class="font-headline-sm text-headline-sm text-primary">12</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Personal Information -->
+<div class="lg:col-span-1 space-y-gutter">
+<div class="glass-card rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-sm text-headline-sm">Personal Information</h4>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">info</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Email Address</label>
+<p class="font-label-md text-label-md">alex.rivera@corpadmin.io</p>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Phone Number</label>
+<p class="font-label-md text-label-md">+1 (555) 012-3456</p>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">CNIC / ID Number</label>
+<p class="font-label-md text-label-md">42101-9876543-2</p>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Residential Address</label>
+<p class="font-label-md text-label-md">123 Tech Plaza, Silicon Valley, San Francisco, CA 94103</p>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Date of Birth</label>
+<p class="font-label-md text-label-md">May 14, 1990</p>
+</div>
+</div>
+</div>
+<!-- Statistics Small Card -->
+<div class="glass-card rounded-xl p-6 bg-primary-container text-on-primary">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-label-md text-label-md">Monthly Performance</h4>
+<span class="text-[#10B981] font-bold text-label-sm">+4.2%</span>
+</div>
+<div class="flex items-end gap-2 h-16">
+<div class="flex-1 bg-secondary-fixed/20 h-8 rounded-sm"></div>
+<div class="flex-1 bg-secondary-fixed/40 h-12 rounded-sm"></div>
+<div class="flex-1 bg-secondary-fixed/60 h-10 rounded-sm"></div>
+<div class="flex-1 bg-secondary-fixed/80 h-14 rounded-sm"></div>
+<div class="flex-1 bg-secondary-fixed h-16 rounded-sm"></div>
+<div class="flex-1 bg-secondary-fixed/70 h-11 rounded-sm"></div>
+</div>
+</div>
+</div>
+<!-- Employment & Timeline -->
+<div class="lg:col-span-2 space-y-gutter">
+<!-- Employment Details -->
+<div class="glass-card rounded-xl p-6">
+<h4 class="font-headline-sm text-headline-sm mb-6">Employment Details</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Department</label>
+<p class="font-label-md text-label-md">Software Engineering</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person_outline</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Manager</label>
+<p class="font-label-md text-label-md">Sarah Jenkins (Director of Engineering)</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Joining Date</label>
+<p class="font-label-md text-label-md">January 15, 2021</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Current Salary</label>
+<p class="font-label-md text-label-md">$145,000 / annum</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Employee Type</label>
+<p class="font-label-md text-label-md">Full-time Regular</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-1">Clearance Level</label>
+<p class="font-label-md text-label-md">L4 - Senior Management Access</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity / Timeline -->
+<div class="glass-card rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-sm text-headline-sm">Recent Activity</h4>
+<button class="text-label-sm text-secondary hover:underline font-bold">View History</button>
+</div>
+<div class="space-y-8 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-outline-variant">
+<!-- Timeline Item 1 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-secondary flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="font-label-md text-label-md">Project Milestone Achieved</p>
+<span class="text-label-sm text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Alex pushed 24 commits to the <span class="text-primary font-bold">Apollo Dashboard</span> repository and merged 2 pull requests.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-outline flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="font-label-md text-label-md">Updated Profile Details</p>
+<span class="text-label-sm text-on-surface-variant">Yesterday, 4:15 PM</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Changed emergency contact information and updated residential address.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-outline flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<p class="font-label-md text-label-md">Salary Increment Processed</p>
+<span class="text-label-sm text-on-surface-variant">Oct 12, 2023</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Annual performance review completed. Salary adjusted from $135k to $145k.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/30 text-label-sm text-on-surface-variant">
+<p>© 2024 CorpAdmin Enterprise Suite. All rights reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">System Status</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

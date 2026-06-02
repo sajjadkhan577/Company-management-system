@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nexus-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nexus_enterprise
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 5
+
+  mongodb:
+    image: mongo:latest
+    container_name: nexus-mongodb
+    environment:
+      MONGO_INITDB_DATABASE: nexus_enterprise
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  backend:
+    build: ./server
+    container_name: nexus-backend
+    environment:
+      NODE_ENV: development
+      DB_HOST: mysql
+      DB_NAME: nexus_enterprise
+      DB_USER: root
+      DB_PASSWORD: root
+      MONGODB_URI: mongodb://mongodb:27017/nexus_enterprise
+      JWT_SECRET: your_secret_key
+      CORS_ORIGIN: http://localhost:5173
+    ports:
+      - "5000:5000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  frontend:
+    build: ./client
+    container_name: nexus-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    environment:
+      VITE_API_URL: http://localhost:5000
+
+volumes:
+  mysql_data:
+  mongodb_data:
