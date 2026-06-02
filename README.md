@@ -1,4 +1,4 @@
-# Nexus Enterprise - Company Management System
+# TeamForge - Company Management System
 
 A comprehensive, modern web-based company management platform designed to streamline HR operations, employee management, attendance tracking, payroll processing, and project management.
 
