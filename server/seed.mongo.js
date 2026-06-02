@@ -16,21 +16,21 @@ const seed = async () => {
   // Users
   const admin = await User.create({
     name: 'Alex Rivera',
-    email: 'admin@corpadmin.com',
+    email: 'admin@teamforge.com',
     password: 'Admin@123',
     role: 'Super Admin',
   });
 
   await User.create({
     name: 'Elena Lopez',
-    email: 'hr@corpadmin.com',
+    email: 'hr@teamforge.com',
     password: 'Admin@123',
     role: 'HR Manager',
   });
 
-  const e1User = await User.create({ name: 'Jordan Dax', email: 'j.dax@corpadmin.com', password: 'Admin@123', role: 'Employee' });
-  const e2User = await User.create({ name: 'Sarah Miller', email: 's.miller@corpadmin.com', password: 'Admin@123', role: 'Employee' });
-  const e3User = await User.create({ name: 'Robert King', email: 'r.king@corpadmin.com', password: 'Admin@123', role: 'Employee' });
+  const e1User = await User.create({ name: 'Jordan Dax', email: 'j.dax@teamforge.com', password: 'Admin@123', role: 'Employee' });
+  const e2User = await User.create({ name: 'Sarah Miller', email: 's.miller@teamforge.com', password: 'Admin@123', role: 'Employee' });
+  const e3User = await User.create({ name: 'Robert King', email: 'r.king@teamforge.com', password: 'Admin@123', role: 'Employee' });
   const e4User = await User.create({ name: 'Marcus Wong', email: 'm.wong@corpadmin.com', password: 'Admin@123', role: 'Employee' });
 
   // Departments

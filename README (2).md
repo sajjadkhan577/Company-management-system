@@ -1,4 +1,4 @@
-# CorpAdmin Enterprise Suite
+# TeamForge Enterprise Suite
 
 A fully functional production-ready full-stack **Company Management System** built with the MERN stack, preserving the exact Google Stitch UI design.
 
@@ -45,7 +45,7 @@ nexus enterprise/
 **server/.env**
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/corpadmin     # or your MongoDB Atlas URI
+MONGO_URI=mongodb://localhost:27017/teamforge     # or your MongoDB Atlas URI
 JWT_SECRET=your_super_secret_key_here
 NODE_ENV=development
 ```
@@ -75,7 +75,7 @@ npm run seed
 ```
 
 This creates:
-- ✅ Admin user: `admin@corpadmin.com` / `Admin@123`
+- ✅ Admin user: `admin@teamforge.com` / `Admin@123`
 - ✅ 5 sample employees
 - ✅ 4 departments
 - ✅ 6 projects
@@ -105,8 +105,8 @@ Then open: [http://localhost:5173](http://localhost:5173)
 
 | Email | Password | Role |
 |-------|----------|------|
-| admin@corpadmin.com | Admin@123 | Super Admin |
-| hr@corpadmin.com | Admin@123 | HR Manager |
+| admin@teamforge.com | Admin@123 | Super Admin |
+| hr@teamforge.com | Admin@123 | HR Manager |
 
 ---
 
